@@ -51,7 +51,7 @@ app.get('/data', (req, res) => {
     }
 })
 app.use((req, res) => {
-    res.status(404).send(`<center>   <h1>You are hacked by <a href="https:github.com/roySuzon">ROYSUZON</a>!</h1> </center> `)
+    res.status(404).send(`<center>   <h1>You are hacked by <a target=”_blank” attribute href="https:github.com/roySuzon">RoySuzon </a>!</h1> </center> `)
 });
 
 app.listen(port, connectMongoDB(), () => console.log(`http://localhost:${port}`))
