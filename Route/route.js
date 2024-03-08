@@ -36,7 +36,7 @@ route.post('/post', function (req, res) {
     if (title != null && author != null && body != null) {
         person.save();
         res.status(202).send({
-            status: "sucess",
+            status: true,
             person
         });
     }
