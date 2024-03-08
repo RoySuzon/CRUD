@@ -24,7 +24,7 @@ app.use("/api", route);
 
 app.get('/', (req, res) => {
 
-    res.send({ baseUrl: `http://192.168.0.100:${port}` });
+    res.send({ baseUrl: `https://crud-99vs.onrender.com` });
 })
 
 
@@ -33,7 +33,7 @@ app.get('/data', (req, res) => {
     try {
         res.send({
             status: true,
-            baseUrl: `http://192.168.0.100:${port}`,
+            baseUrl: `https://crud-99vs.onrender.com`,
         })
     } catch (error) {
         res.status(404).send({
