@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const { basename } = require('path');
-route = require('./Route/route');
+route = require('../Route/route');
 const url = require('url');
 require('dotenv').config();
 const app = express()
