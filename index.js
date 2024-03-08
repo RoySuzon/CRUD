@@ -20,8 +20,10 @@ async function connectMongoDB() {
 // } catch (error) {
 //     handleError(error);
 // }
-app.use("/api", route);
-app.use(express.urlencoded({ extended: false }), express.json());
+
+
+app.use("/api", express.urlencoded({ extended: false }), express.json(), route);
+
 app.get('/', (req, res) => {
 
     res.send({ baseUrl: `https://crud-99vs.onrender.com` });
@@ -43,8 +45,8 @@ app.get('/data', (req, res) => {
         })
     }
 })
-
 app.use((req, res) => {
-    res.status(404).send()
+    res.status(404).send("<center>   <h1>You are hacke!</h1> </center>")
 });
+
 app.listen(port, connectMongoDB(), () => console.log(`http://localhost:${port}`))

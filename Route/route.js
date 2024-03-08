@@ -7,7 +7,7 @@ route.get("/login", (req, res) => {
     res.send("LOGIN");
 })
 
-route.post('/update/:id', async function (req, res) {
+route.post('/update/:id', express.urlencoded({ extended: false }), express.json(), async function (req, res) {
     const { id } = req.params;
     const { title } = req.body;
 
