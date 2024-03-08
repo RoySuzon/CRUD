@@ -5,7 +5,7 @@ route = require('./Route/route');
 const url = require('url');
 require('dotenv').config();
 const app = express()
-const port = process.env.PORT
+const port = process.env.PORT || 4000
 // const mongoConfig = MONGO;
 async function connectMongoDB() {
     // await mongoose.connect(`${process.env.MONGO}`).
@@ -21,7 +21,7 @@ async function connectMongoDB() {
 //     handleError(error);
 // }
 app.use("/api", route);
-
+app.use(express.urlencoded({ extended: false }), express.json());
 app.get('/', (req, res) => {
 
     res.send({ baseUrl: `https://crud-99vs.onrender.com` });

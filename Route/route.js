@@ -7,7 +7,7 @@ route.get("/login", (req, res) => {
     res.send("LOGIN");
 })
 
-route.post('/update/:id', express.urlencoded({ extended: false }), express.json(), async function (req, res) {
+route.post('/update/:id', async function (req, res) {
     const { id } = req.params;
     const { title } = req.body;
 
@@ -29,7 +29,7 @@ route.get('/delete/:id', async function (req, res) {
     }
 });
 
-route.post('/post', express.json(), function (req, res) {
+route.post('/post', function (req, res) {
 
     const { title, author, body } = req.body;
     const person = new Person({ title: title, author: author, body: body });
