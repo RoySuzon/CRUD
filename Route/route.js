@@ -9,10 +9,10 @@ route.get("/login", (req, res) => {
 
 route.post("/update/:id", async function (req, res) {
   const { id } = req.params;
-  const { title } = req.body;
+  const { title,author,body } = req.body;
 
   try {
-    await Person.findByIdAndUpdate(id, { $set: { title: title } });
+    await Person.findByIdAndUpdate(id, { $set: { title: title ,author:author,body:body} });
     res.send({
       status: true,
     });
@@ -48,7 +48,7 @@ route.post("/post", function (req, res) {
 });
 
 route.get("/user", async (req, res) => {
-  const person = await Person.find();
+  const person = await Person.find().select({title:1,body:1,author:1},);
 
   res.send({
     status: true,
