@@ -8,7 +8,8 @@ const app = express()
 const port = process.env.PORT
 // const mongoConfig = MONGO;
 async function connectMongoDB() {
-    await mongoose.connect(`${process.env.MONGO}`).
+    // await mongoose.connect(`${process.env.MONGO}`).
+    await mongoose.connect("mongodb+srv://roybd3600:roybd3600@cluster0.kffjmdt.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0").
         catch(error => handleError(error));
     console.log('Connected MongoDB !')
 }
