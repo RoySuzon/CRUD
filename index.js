@@ -24,10 +24,12 @@ async function connectMongoDB() {
 
 app.use("/api", express.urlencoded({ extended: false }), express.json(), route);
 
-app.get('/', (req, res) => {
+// app.get('/', (req, res) => {
 
-    res.send({ baseUrl: `https://crud-99vs.onrender.com` });
-})
+//     res.send({ 
+//         created_By:"https:github.com/roySuzon",
+//         baseUrl: `https://crud-99vs.onrender.com` });
+// })
 
 
 app.get('/data', (req, res) => {
@@ -35,6 +37,9 @@ app.get('/data', (req, res) => {
     try {
         res.send({
             status: true,
+            created_By:"Goutom Roy",
+            url:"https://github.com/roySuzon",
+            mail:"goutomroy770@gmail.com",
             baseUrl: `https://crud-99vs.onrender.com`,
         })
     } catch (error) {
@@ -46,7 +51,7 @@ app.get('/data', (req, res) => {
     }
 })
 app.use((req, res) => {
-    res.status(404).send("<center>   <h1>You are hacke!</h1> </center>")
+    res.status(404).send(`<center>   <h1>You are hacked by <a href="https:github.com/roySuzon">ROYSUZON</a>!</h1> </center> `)
 });
 
 app.listen(port, connectMongoDB(), () => console.log(`http://localhost:${port}`))

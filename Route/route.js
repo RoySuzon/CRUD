@@ -23,8 +23,8 @@ route.post("/update/:id", async function (req, res) {
 route.get("/delete/:id", async function (req, res) {
   const { id } = req.params;
 
-  await Person.findByIdAndDelete(id);
   try {
+    await Person.findByIdAndDelete(id);
     res.send({
       status: true,
     });
