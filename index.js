@@ -1,15 +1,14 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const { basename } = require('path');
-route = require('../Route/route');
+route = require('./Route/route');
 const url = require('url');
 require('dotenv').config();
 const app = express()
 const port = process.env.PORT
 // const mongoConfig = MONGO;
 async function connectMongoDB() {
-    await mongoose.connect(`${process.env.MONGO}`).
-        catch(error => handleError(error));
+    await mongoose.connect(`${process.env.MONGO}`);
     console.log('Connected MongoDB !')
 }
 
