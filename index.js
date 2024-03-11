@@ -1,11 +1,12 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 const { basename } = require('path');
 route = require('./Route/route');
 const url = require('url');
 require('dotenv').config();
 const app = express()
-const port = process.env.PORT || 4000
+const port = process.env.PORT || 3600
 // const mongoConfig = MONGO;
 async function connectMongoDB() {
     // await mongoose.connect(`${process.env.MONGO}`).
@@ -21,7 +22,7 @@ async function connectMongoDB() {
 //     handleError(error);
 // }
 
-
+app.use(cors());
 app.use("/api", express.urlencoded({ extended: false }), express.json(), route);
 
 // app.get('/', (req, res) => {
@@ -51,7 +52,7 @@ app.get('/data', (req, res) => {
     }
 })
 app.use((req, res) => {
-    res.status(404).send(`<center>   <h1>You are hacked by @RoySuzon </h1> </center> `)
+    res.status(404).send(`<center>   <h1> You are hacked by <a href="https://github.com/roySuzon"> @RoySuzon </a></h1> </center> `)
 
 });
 
